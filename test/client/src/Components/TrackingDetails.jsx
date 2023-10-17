@@ -8,7 +8,7 @@ function TrackingDetails({ tracking }) {
 
   const handleDelete = async () => {
   try {
-    const response = await fetch("https://three65test.onrender.com/api/tracking/" + tracking._id, {
+    const response = await fetch("https://ship365-api.onrender.com/api/tracking/" + tracking._id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function TrackingDetails({ tracking }) {
 
 
   const handleIntransit = async () => {
-    const response = await fetch("https://three65test.onrender.com/api/tracking/" + tracking._id, {
+    const response = await fetch("https://ship365-api.onrender.com/api/tracking/" + tracking._id, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
