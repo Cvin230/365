@@ -30,7 +30,7 @@ function LandingPage() {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://three65test.onrender.com/api/tracking/" + tracking
+        "https://ship365-api.onrender.com/api/tracking/" + tracking
       );
       console.log(response, "response");
 
