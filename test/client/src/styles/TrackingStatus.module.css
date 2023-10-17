@@ -1,0 +1,67 @@
+.trackingStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 100px;
+}
+
+.line {
+  border-left: 5px dotted #1aac83;
+  height: 100px; /* Adjust height as needed */
+  width: 1px;
+  position: absolute;
+  left: 50%;
+  top: 59%;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: #1aac83;
+  border-radius: 50%;
+  position: absolute;
+  left: 50.5%;
+  top: 59%;
+  transform: translate(-50%, -50%);
+}
+
+.line2 {
+  border-left: 5px dotted #000;
+  height: 100px; /* Adjust height as needed */
+  width: 1px;
+  position: absolute;
+  left: 50%;
+  top: 16.5%;
+}
+
+.circle2 {
+  width: 10px;
+  height: 10px;
+  background-color: #a3a0a0;
+  border-radius: 50%;
+  position: absolute;
+  left: 50.5%;
+  top: 16.5%;
+  transform: translate(-50%, -50%);
+}
+
+.line3 {
+  border-left: 5px dotted #000;
+  height: 100px; /* Adjust height as needed */
+  width: 1px;
+  position: absolute;
+  left: 50%;
+  top: 9%;
+}
+
+.circle3 {
+  width: 10px;
+  height: 10px;
+  background-color: #a3a0a0;
+  border-radius: 50%;
+  position: absolute;
+  left: 50.5%;
+  top: 9%;
+  transform: translate(-50%, -50%);
+}

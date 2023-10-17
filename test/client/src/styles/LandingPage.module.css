@@ -1,0 +1,913 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+p {
+  margin: 0;
+  padding: 0;
+  color: #272d2d;
+}
+.mainContainer {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.NavbarConatainer {
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f6f8ff;
+  padding: 0rem 4rem;
+  position: relative;
+}
+
+.navBarWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brandWrap p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brandWrap p span {
+  color: #23ce6b;
+}
+.brandWrap {
+  /* width: 20%; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ctaBtn {
+  /* width: 600; */
+  /* height: 50; */
+  border: none;
+  border-radius: 10px;
+  background-color: #272d2d;
+  color: white;
+  font-size: 16px;
+  font-weight: 530;
+  padding: 10px;
+}
+
+/* end of the nav section */
+
+/* .heroSectionContainer {
+  width: 100vw;
+  height: 92vh;
+} */
+
+.heroSectionContent {
+  width: 100%;
+  /* height: 80%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* position: relative;
+  top: 7vh; */
+}
+.headline {
+  width: 45%;
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.subheadline {
+  width: 45%;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 36px;
+  margin: 1rem 0rem;
+}
+
+.heroCTA {
+  width: 13vw;
+  height: 5.5vh;
+  border-radius: 10px;
+  color: white;
+  background-color: #272d2d;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 1.5rem 0rem;
+  position: relative;
+}
+.quickLink {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* 
+end of the hero section */
+
+/* start of the feature section */
+
+.featureHeadline {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 1rem 0rem;
+}
+.featureWrapper {
+  /* width: 85%; */
+  /* height: 80vh; */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.featureBanner {
+  /* width: 60%; */
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* first feature animation cards */
+.feactureBackCard {
+  position: absolute;
+  top: 27%;
+  left: 15%;
+  z-index: 1;
+}
+
+.orderCard {
+  position: absolute;
+  top: 10%;
+  right: 27%;
+  z-index: 2;
+}
+
+.featureExtraCheeze {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  transform: rotate(10deg);
+  z-index: 2;
+}
+.yourOrderElement {
+  position: absolute;
+  top: 18.25%;
+  left: 42%;
+  z-index: 2;
+}
+/* second features animation elements */
+.orderRecieved {
+  position: absolute;
+  left: 42%;
+  top: 10%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.addSpices {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 10px;
+  background-color: white;
+  transform: rotate(15deg);
+  opacity: 0;
+}
+
+.cookingWokhei {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 10px;
+  background-color: white;
+  transform: rotate(-10deg);
+  opacity: 0;
+}
+
+.packageElement {
+  position: absolute;
+  top: 47%;
+  right: 22.5%;
+  z-index: 2;
+}
+
+/* thrid animation elements */
+
+.trackMap {
+  position: absolute;
+  top: 22%;
+  left: 20%;
+  opacity: 0;
+}
+
+.PickedUp {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 2;
+  transform: rotate(-12deg);
+  opacity: 0;
+}
+
+.arrivingSoon {
+  position: absolute;
+  top: 25%;
+  right: 27%;
+  z-index: 2;
+  transform: rotate(12deg);
+  opacity: 0;
+}
+
+.trackingPath {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  /* border: 1px solid black; */
+  opacity: 0;
+}
+
+.trackDeliveryMan {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  z-index: 3;
+  opacity: 0;
+}
+
+/* fourth animation elements */
+.package {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  opacity: 0;
+}
+
+.ratings {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  opacity: 0;
+}
+
+.Delivered {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  transform: rotate(-15deg);
+  opacity: 0;
+}
+
+.payments {
+  position: absolute;
+  bottom: 11%;
+  left: 24%;
+  transform: rotate(15deg);
+  opacity: 0;
+}
+
+.deliveryElement {
+  position: absolute;
+  top: 68%;
+  left: 42%;
+  z-index: 2;
+}
+/* paths from feature 1 to feature 2 */
+.pathf1tof2 {
+  position: absolute;
+  /* border: 1px solid black; */
+  top: 18%;
+}
+.pathf2tof3 {
+  position: absolute;
+  /* border: 1px solid black; */
+  top: 48%;
+}
+
+.pathf3tof4 {
+  position: absolute;
+  /* border: 1px solid black; */
+  top: 68%;
+}
+/* end of the path 1 */
+.restaurantsConatainer {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.restaurantHeadline {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.restaurantsCarousals {
+  width: 100%;
+  height: 50vh;
+  background-color: #f6f8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* end of the restuarants */
+
+.benefitsContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.benefitsHeadline {
+  font-size: 48px;
+  font-weight: 700;
+  width: 55%;
+  text-align: center;
+}
+
+.benefitsWrapper {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+/* 
+end of the benefits */
+
+.testimonialsContainer {
+  width: 100vw;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.testimonialsHeadline {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+.testimonialWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr); /* Adjusted grid-template-rows */
+  grid-gap: 3rem; /* Gap between grid items */
+  padding: 3rem 0rem;
+}
+
+.gridItem {
+  box-shadow: 8px 8px 20px #ebf0ff, -4px -4px 20px #ebf0ff;
+}
+
+/* Varying widths and heights for each grid item */
+.gridItem:nth-child(1) {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  width: 30vw;
+}
+
+.gridItem:nth-child(2) {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  width: 30vw;
+}
+
+.gridItem:nth-child(3) {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+  width: 25vw;
+  position: relative;
+  left: -20%;
+}
+
+.gridItem:nth-child(4) {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 2;
+  margin-left: 3rem;
+}
+
+.gridItem:nth-child(5) {
+  width: 35vw;
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.gridItem:nth-child(6) {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+  width: 30vw;
+  position: relative;
+  left: -20%;
+}
+.gridItem:nth-child(7) {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  width: 25vw;
+}
+/* end of the testimonials */
+
+.finalCTAContainer {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaWrapper {
+  width: 85%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  background-color: #ebf0ff;
+  border-radius: 16px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 8px 8px 20px #f0f0f0;
+}
+
+.ctaContentWrap {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0rem 4rem;
+}
+.ctaHeadline {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  left: -1rem;
+}
+
+.ctaSubheadline {
+  font-size: 18px;
+  font-weight: 450;
+  letter-spacing: 0.5px;
+}
+.ctaBanner {
+  width: 50%;
+  height: 100%;
+  background-image: url("../Assets/finalCTA.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.ctaButton {
+  width: 16vw;
+  height: 7vh;
+  border: none;
+  background-color: #272d2d;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+/* end of the cta */
+
+.footerContainer {
+  width: 100vw;
+  height: 50vh;
+  background-color: #272d2d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footerContainer p {
+  color: rgb(223, 223, 223);
+}
+
+.footerContentWrap {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 7vh 0vw;
+}
+
+.footerbrandWrap p {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footerbrandWrap p span {
+  color: #23ce6b;
+}
+
+.brandQuote {
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.contactInfo {
+  font-size: 14px;
+  margin: 0.5rem 0rem;
+}
+.contactHeadline {
+  font-size: 16px;
+  font-weight: 550;
+  margin-bottom: 1rem;
+}
+
+.quiclLinkWrap p {
+  font-size: 14px;
+  margin-bottom: 0.75rem;
+}
+
+.nlheadline {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.subscribeWrap {
+  display: flex;
+  align-items: center;
+}
+
+.subscribeWrap input {
+  width: 18vw;
+  height: 4vh;
+  margin: 1rem 0rem;
+  border-radius: 4px;
+  border: none;
+}
+
+.subscribeWrap button {
+  width: 7vw;
+  height: 4vh;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  background-color: #23ce6b;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copyright {
+  font-size: 13px;
+  color: #949494;
+  font-weight: 450;
+}
+
+/* Media Queries and responsive design */
+
+@media (max-width: 1270px) {
+  .headline {
+    width: 50%;
+    font-size: 58px;
+  }
+  .heroRightBanner {
+    transform: scale(0.8);
+  }
+  .heroLeftBanner {
+    transform: scale(0.8);
+  }
+  .featureHeadline,
+  .benefitsHeadline,
+  .restaurantHeadline,
+  .testimonialsHeadline {
+    font-size: 42px;
+  }
+  .ctaHeadline {
+    left: 0;
+  }
+}
+
+@media (max-width: 1150px) {
+  .headline {
+    width: 50%;
+    font-size: 52px;
+  }
+  .subheadline {
+    font-size: 18px;
+  }
+  .heroRightBanner {
+    transform: scale(0.7);
+  }
+  .heroLeftBanner {
+    transform: scale(0.7);
+  }
+  .featureHeadline,
+  .benefitsHeadline,
+  .restaurantHeadline,
+  .testimonialsHeadline {
+    font-size: 38px;
+  }
+  .ctaHeadline {
+    left: 0;
+  }
+}
+
+@media (max-width: 930px) {
+  .headline {
+    width: 60%;
+    font-size: 46px;
+  }
+  .subheadline {
+    font-size: 16px;
+  }
+  .heroRightBanner {
+    transform: scale(0.6);
+  }
+  .heroLeftBanner {
+    transform: scale(0.6);
+  }
+  .featureHeadline,
+  .benefitsHeadline,
+  .restaurantHeadline,
+  .testimonialsHeadline {
+    font-size: 32px;
+  }
+  .testimonialsContainer {
+    height: 150vh;
+  }
+  .ctaHeadline {
+    left: 0;
+  }
+
+  .ctaBanner {
+    width: 35%;
+  }
+  .ctaContentWrap {
+    width: 65%;
+  }
+  .ctaButton {
+    width: 20vw;
+    height: 6vh;
+    font-size: 18px;
+  }
+  .pathf1tof2,
+  .pathf2tof3,
+  .pathf3tof4,
+  .packageElement,
+  .yourOrderElement,
+  .deliveryElement {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Styles for mobile devices */
+  /* .heroSectionContent {
+    top: 18vh;
+  } */
+  .headline {
+    /* width: 70%; */
+    font-size: 42px;
+    margin-bottom: 0;
+  }
+  .subheadline {
+    width: 70%;
+    font-size: 16px;
+  }
+  .heroCTA {
+    width: 40vw;
+  }
+
+  .heroLeftBanner {
+    width: 440px;
+    height: 440px;
+  }
+
+  .featureWrapper {
+    width: 100%;
+    /* height: 100vh; */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featureExtraCheeze {
+    top: 5%;
+    left: 13%;
+    transform: scale(0.6) rotate(15deg);
+  }
+
+  .orderCard {
+    top: -5%;
+    right: 12%;
+    transform: scale(0.63);
+  }
+  .feactureBackCard {
+    top: 0%;
+    transform: scale(0.7);
+  }
+  .orderRecieved,
+  .addSpices,
+  .cookingWokhei {
+    opacity: 1;
+  }
+  .orderRecieved {
+    left: 30%;
+    transform: scale(0.8);
+  }
+  .addSpices {
+    left: 22%;
+    top: 5%;
+    transform: scale(0.7) rotate(15deg);
+  }
+  .cookingWokhei {
+    right: 22%;
+    top: 50%;
+    transform: scale(0.7) rotate(-15deg);
+  }
+
+  .arrivingSoon,
+  .PickedUp,
+  .trackMap,
+  .trackDeliveryMan,
+  .trackingPath {
+    opacity: 1;
+  }
+  .trackMap {
+    top: 0%;
+    left: 20%;
+    transform: scale(0.6);
+  }
+  .trackingPath {
+    top: 10%;
+    left: 34%;
+    transform: scale(0.6);
+  }
+  .trackDeliveryMan {
+    top: 28%;
+    left: 41%;
+    transform: scale(0.7);
+  }
+  .PickedUp {
+    left: 20%;
+    transform: scale(0.7) rotate(-15deg);
+  }
+  .arrivingSoon {
+    right: 15%;
+    top: 60%;
+    transform: scale(0.7) rotate(15deg);
+  }
+
+  .package,
+  .payments,
+  .ratings,
+  .Delivered {
+    opacity: 1;
+  }
+  .package {
+    left: 16%;
+    top: 20%;
+    transform: scale(0.65);
+  }
+  .Delivered {
+    left: 16%;
+    top: 5%;
+    transform: scale(0.7) rotate(15deg);
+  }
+  .payments {
+    left: 16%;
+    bottom: 7%;
+    transform: scale(0.7) rotate(-15deg);
+  }
+  .ratings {
+    top: 10%;
+    right: 10%;
+    transform: scale(0.7);
+  }
+  .featureWrapper:nth-of-type(2),
+  .featureWrapper:nth-of-type(4) {
+    flex-direction: column-reverse;
+  }
+  .featureHeadline,
+  .benefitsHeadline,
+  .restaurantHeadline,
+  .testimonialsHeadline {
+    font-size: 28px;
+    text-align: center;
+  }
+  .benefitsWrapper {
+    height: 90%;
+    flex-direction: column;
+  }
+
+  .benefitsHeadline {
+    width: 70%;
+  }
+  .testimonialsContainer {
+    height: 200vh;
+  }
+
+  .testimonialWrapper {
+    width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr); /* Adjusted grid-template-rows */
+    gap: 1rem;
+    padding: 3rem 2rem;
+  }
+  .gridItem:nth-child(1) {
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 1;
+    width: 100%;
+  }
+
+  .gridItem:nth-child(2) {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
+    width: 100%;
+    height: 40vh;
+  }
+
+  .gridItem:nth-child(3) {
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 1;
+    width: 100%;
+    left: 0;
+  }
+
+  .gridItem:nth-child(4) {
+    grid-column: 1 / span 4;
+    grid-row: 5 / span 1;
+    margin-left: 0;
+    height: 35vh;
+  }
+
+  .gridItem:nth-child(5) {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    width: 100%;
+    height: 30vh;
+  }
+
+  .gridItem:nth-child(6) {
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 1;
+    width: 100%;
+    left: 0;
+  }
+  .gridItem:nth-child(7) {
+    grid-column: 3 / span 2;
+    grid-row: 4 / span 1;
+    width: 100%;
+  }
+
+  .finalCTAContainer {
+    height: 100vh;
+  }
+  .ctaWrapper {
+    height: 85%;
+    width: 80%;
+    flex-direction: column-reverse;
+  }
+  .ctaBanner {
+    width: 100%;
+    height: 80%;
+  }
+  .ctaHeadline {
+    left: 0;
+    font-size: 24px;
+    width: 100%;
+  }
+  .ctaSubheadline {
+    font-size: 16px;
+  }
+
+  .ctaBanner {
+    width: 100%;
+  }
+  .ctaContentWrap {
+    width: 100%;
+    padding: 0rem 2rem;
+  }
+  .ctaButton {
+    width: 40vw;
+    height: 6vh;
+    font-size: 16px;
+  }
+  .pathf1tof2,
+  .pathf2tof3,
+  .pathf3tof4,
+  .packageElement,
+  .yourOrderElement,
+  .deliveryElement {
+    display: none;
+  }
+}

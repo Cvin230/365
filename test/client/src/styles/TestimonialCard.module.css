@@ -1,0 +1,41 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 2rem;
+    border: 1px solid rgb(229, 229, 229);
+    box-shadow: 8px 8px 20px #ebf0ff,-4px -4px 20px #ebf0ff;
+    border-radius: 12px;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: 650;
+}
+.review{
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin: 0.75rem 0rem;
+}
+
+.rating{
+    width: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .name{
+        font-size: 18px;
+    }
+    .review{
+        font-size: 14px;
+    }
+    .rating{
+        width: 18vw;
+    }
+}
