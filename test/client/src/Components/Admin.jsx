@@ -20,7 +20,7 @@ const Admin = () => {
     const tracking = { name, address, tn };
 
     const response = await fetch(
-      "https://three65test.onrender.com/api/tracking",
+      "https://ship365-api.onrender.com/api/tracking",
       {
         method: "POST",
         body: JSON.stringify(tracking),
@@ -55,7 +55,7 @@ const Admin = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://three65test.onrender.com/api/tracking"
+          "https://ship365-api.onrender.com/api/tracking"
         );
         console.log(response, "response");
 
