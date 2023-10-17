@@ -12,7 +12,7 @@ function TrackingDetails({ tracking }) {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://365test-murex.vercel.app/",
+        "Access-Control-Allow-Origin": "https://ship365.onrender.com",
         // Add any other headers if necessary
       },
     });
