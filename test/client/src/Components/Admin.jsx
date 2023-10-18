@@ -14,6 +14,7 @@ const Admin = () => {
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredTracking, setFilteredTracking] = useState([]);
+  const [ready, setReady] = useState(true);
   console.log(tn, "tn");
 
   const handleSubmit = async (e) => {
@@ -89,6 +90,7 @@ const Admin = () => {
     );
     console.log('Filtered Tracking:', filteredTracking);
     setFilteredTracking(filteredTracking);
+    setReady(false);
   };
 
   return (
@@ -165,7 +167,7 @@ const Admin = () => {
           )) : null}
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        {filteredTracking.length == 0 ?
+        {ready ?
           allTracking.map((tracking) => (
             <TrackingDetails key={tracking._id} tracking={tracking} />
           )) : null}
