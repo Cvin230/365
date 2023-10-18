@@ -9,7 +9,11 @@ function TrackingStatus({ status, address, updateTime, name }) {
         <p style={{ color: "#a3a0a0" }}>Waiting for update</p>
         <div className={styles.line2}></div>
         <div className={styles.circle2}></div>
+        <div>
         <p style={{ color: "#e7195a" }}>Label created, waiting for pickup</p>
+          
+        </div>
+        
       </div>
     );
   } else if (status === "intransit") {
@@ -18,8 +22,10 @@ function TrackingStatus({ status, address, updateTime, name }) {
         <p style={{ color: "#a3a0a0" }}>Waiting for update</p>
         <div className={styles.line3}></div>
         <div className={styles.circle3}></div>
-        <div>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center}}>
           <p style={{ color: "#1aac83" }}>Package in transit to destination</p>
+          <p style={{ color: "#1aac83" }}>{address}</p>
+          <p style={{ color: "#1aac83" }}>{name}</p>
           <div
             style={{
               display: "flex",
@@ -29,7 +35,7 @@ function TrackingStatus({ status, address, updateTime, name }) {
             }}
           >
             <p style={{ color: "#1aac83" }}>{address}</p>
-            <p style={{ color: "#a3a0a0" }}>{updateTime}</p>
+            <p style={{ color: "#a3a0a0", fontSize: "15px" }}>{updateTime}</p>
           </div>
         </div>
 
@@ -37,8 +43,8 @@ function TrackingStatus({ status, address, updateTime, name }) {
         <div className={styles.circle}></div>
         <div>
         <p style={{ color: "#1aac83" }}>Label created, waiting for pickup</p>
-        <p style={{ color: "#a3a0a0" }}>{address}</p>
-        <p style={{ color: "#a3a0a0" }}>{name}</p>
+        <p style={{ color: "#1aac83" }}>{address}</p>
+        <p style={{ color: "#1aac83" }}>{name}</p>
         </div>
       </div>
     );
