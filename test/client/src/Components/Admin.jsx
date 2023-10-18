@@ -12,12 +12,21 @@ const Admin = () => {
   const [tn, setTn] = useState("");
   const [emptyFields, setEmptyFields] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredTracking, setFilteredTracking] = useState([]);
   console.log(tn, "tn");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     const tracking = { name, address, tn };
+
+    const existingTracking = allTracking.find((item) => item.tn === tn);
+    if (existingTracking) {
+    setError("Tracking number already exists. Please use another one.");
+    setLoading(false);
+    return;
+    }
 
     const response = await fetch(
       "https://ship365-api.onrender.com/api/tracking",
@@ -74,6 +83,13 @@ const Admin = () => {
     setLoading(false);
   }, []);
 
+  const handleSearch = () => {
+    const filteredTracking = allTracking.filter((tracking) =>
+      tracking.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredTracking(filteredTracking);
+  };
+  
   return (
     <div
       style={{
@@ -86,6 +102,16 @@ const Admin = () => {
       }}
     >
       <h1>Create Tracking Details</h1>
+      <div>
+      <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+        <input
+          type="text"
+          placeholder="Search by name..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <form
         onSubmit={handleSubmit}
         // style={{
@@ -120,7 +146,9 @@ const Admin = () => {
           type="text"
           id="tn"
           name="tn"
-          onChange={(e) => setTn(e.target.value)}
+          onChange={(e) => {setTn(e.target.value);
+                           setError(null);
+                           }}
           value={tn}
           className={emptyFields.includes("tracking number") ? "error" : ""}
         />
@@ -129,7 +157,7 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        {allTracking &&
+        {searchQuery ? filteredTracking :
           allTracking.map((tracking) => (
             <TrackingDetails key={tracking._id} tracking={tracking} />
           ))}
