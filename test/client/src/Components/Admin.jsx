@@ -102,7 +102,6 @@ const Admin = () => {
       }}
     >
       <h1>Create Tracking Details</h1>
-      <div>
       <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
         <input
           type="text"
