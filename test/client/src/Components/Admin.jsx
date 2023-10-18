@@ -79,7 +79,7 @@ const Admin = () => {
 
     fetchTracking();
     setLoading(false);
-  }, []);
+  }, [dispatch]);
 
 
   return (
