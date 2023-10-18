@@ -9,9 +9,10 @@ function TrackingStatus({ status, address, updateTime, name }) {
         <p style={{ color: "#a3a0a0" }}>Waiting for update</p>
         <div className={styles.line2}></div>
         <div className={styles.circle2}></div>
-        <div>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
         <p style={{ color: "#e7195a" }}>Label created, waiting for pickup</p>
-          
+        <p style={{ color: "#e7195a" }}>{address}</p>
+        <p style={{ color: "#e7195a" }}>{name}</p>
         </div>
         
       </div>
@@ -22,10 +23,9 @@ function TrackingStatus({ status, address, updateTime, name }) {
         <p style={{ color: "#a3a0a0" }}>Waiting for update</p>
         <div className={styles.line3}></div>
         <div className={styles.circle3}></div>
-        <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <div>
           <p style={{ color: "#1aac83" }}>Package in transit to destination</p>
-          <p style={{ color: "#1aac83" }}>{address}</p>
-          <p style={{ color: "#1aac83" }}>{name}</p>
+          
           <div
             style={{
               display: "flex",
