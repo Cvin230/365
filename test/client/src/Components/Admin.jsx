@@ -165,10 +165,10 @@ const Admin = () => {
           )) : null}
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        {!searchQuery &&
+        {filteredTracking.length == 0 ?
           allTracking.map((tracking) => (
             <TrackingDetails key={tracking._id} tracking={tracking} />
-          ))}
+          )) : null}
       </div>
     </div>
   );
