@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/TrackingStatus.module.css";
-function TrackingStatus({ status, address, updateTime }) {
+function TrackingStatus({ status, address, updateTime, name }) {
   let statusDisplay;
 
   if (status === "pending") {
@@ -25,6 +25,7 @@ function TrackingStatus({ status, address, updateTime }) {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
+              gap: "10px"
             }}
           >
             <p style={{ color: "#1aac83" }}>{address}</p>
@@ -35,6 +36,8 @@ function TrackingStatus({ status, address, updateTime }) {
         <div className={styles.line}></div>
         <div className={styles.circle}></div>
         <p style={{ color: "#1aac83" }}>Label created, waiting for pickup</p>
+        <p style={{ color: "#a3a0a0" }}>{address}</p>
+        <p style={{ color: "#a3a0a0" }}>{name}</p>
       </div>
     );
   } else {
