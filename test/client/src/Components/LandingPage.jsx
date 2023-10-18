@@ -111,6 +111,7 @@ function LandingPage() {
           <TrackingStatus
             status={details.status}
             address={details.address}
+            name={details.name}
             updateTime={formatDistanceToNow(new Date(details.updatedAt), {
               addSuffix: true,
             })}
