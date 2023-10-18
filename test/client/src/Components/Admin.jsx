@@ -23,9 +23,9 @@ const Admin = () => {
 
     const existingTracking = allTracking.find((item) => item.tn === tn);
     if (existingTracking) {
-    setError("Tracking number already exists. Please use another one.");
-    setLoading(false);
-    return;
+      setError("Tracking number already exists. Please use another one.");
+      setLoading(false);
+      return;
     }
 
     const response = await fetch(
@@ -89,7 +89,7 @@ const Admin = () => {
     );
     setFilteredTracking(filteredTracking);
   };
-  
+
   return (
     <div
       style={{
@@ -145,9 +145,10 @@ const Admin = () => {
           type="text"
           id="tn"
           name="tn"
-          onChange={(e) => {setTn(e.target.value);
-                           setError(null);
-                           }}
+          onChange={(e) => {
+            setTn(e.target.value);
+            setError(null);
+          }}
           value={tn}
           className={emptyFields.includes("tracking number") ? "error" : ""}
         />
@@ -156,16 +157,16 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-      {searchQuery && filteredTracking.length > 0 && (
-      filteredTracking.map((tracking) => (
-      <TrackingDetails key={tracking._id} tracking={tracking} />
-      ))
-    )}
-    {!searchQuery && allTracking.map((tracking) => (
-    <TrackingDetails key={tracking._id} tracking={tracking} />
-    ))}
-    </div>
-
+        {searchQuery &&
+          filteredTracking.length > 0 &&
+          filteredTracking.map((tracking) => (
+            <TrackingDetails key={tracking._id} tracking={tracking} />
+          ))}
+        {!searchQuery &&
+          allTracking.map((tracking) => (
+            <TrackingDetails key={tracking._id} tracking={tracking} />
+          ))}
+      </div>
     </div>
   );
 };
