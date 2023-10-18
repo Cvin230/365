@@ -157,14 +157,17 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        {/* {searchQuery &&
+        {searchQuery &&
           filteredTracking.length > 0 &&
           filteredTracking.map((tracking) => (
             <TrackingDetails key={tracking._id} tracking={tracking} />
-          ))} */}
-        {allTracking.map((tracking) => (
-          <TrackingDetails key={tracking._id} tracking={tracking} />
-        ))}
+          ))}
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+        {!searchQuery &&
+          allTracking.map((tracking) => (
+            <TrackingDetails key={tracking._id} tracking={tracking} />
+          ))}
       </div>
     </div>
   );
