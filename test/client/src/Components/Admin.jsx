@@ -12,9 +12,6 @@ const Admin = () => {
   const [tn, setTn] = useState("");
   const [emptyFields, setEmptyFields] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredTracking, setFilteredTracking] = useState([]);
-  const [ready, setReady] = useState(true);
   console.log(tn, "tn");
 
   const handleSubmit = async (e) => {
@@ -84,14 +81,6 @@ const Admin = () => {
     setLoading(false);
   }, []);
 
-  const handleSearch = () => {
-    const filteredTracking = allTracking.filter((tracking) =>
-      tracking.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    console.log('Filtered Tracking:', filteredTracking);
-    setFilteredTracking(filteredTracking);
-    setReady(false);
-  };
 
   return (
     <div
@@ -105,15 +94,6 @@ const Admin = () => {
       }}
     >
       <h1>Create Tracking Details</h1>
-      <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-        <input
-          type="text"
-          placeholder="Search by name..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button onClick={handleSearch}>Search</button>
-      </div>
       <form
         onSubmit={handleSubmit}
         // style={{
@@ -160,14 +140,7 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        {searchQuery &&
-          filteredTracking.length > 0 ?
-          filteredTracking.map((tracking) => (
-            <TrackingDetails key={tracking._id} tracking={tracking} />
-          )) : null}
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        {ready ?
+        {alltracking &&
           allTracking.map((tracking) => (
             <TrackingDetails key={tracking._id} tracking={tracking} />
           )) : null}
