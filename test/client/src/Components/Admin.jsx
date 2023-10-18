@@ -140,11 +140,11 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        {alltracking &&
-          allTracking.map((tracking) => (
-            <TrackingDetails key={tracking._id} tracking={tracking} />
-          )) : null}
-      </div>
+  {allTracking &&
+    allTracking.map((tracking) => (
+      <TrackingDetails key={tracking._id} tracking={tracking} />
+    ))}
+</div>
     </div>
   );
 };
