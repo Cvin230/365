@@ -35,9 +35,11 @@ function TrackingStatus({ status, address, updateTime, name }) {
 
         <div className={styles.line}></div>
         <div className={styles.circle}></div>
+        <div>
         <p style={{ color: "#1aac83" }}>Label created, waiting for pickup</p>
         <p style={{ color: "#a3a0a0" }}>{address}</p>
         <p style={{ color: "#a3a0a0" }}>{name}</p>
+        </div>
       </div>
     );
   } else {
