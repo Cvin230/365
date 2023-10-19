@@ -17,6 +17,7 @@ const Admin = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   const handleLogin = (username) => {
+    console.log("Logging in with username:", username);
     setLoggedInUser(username);
     localStorage.setItem('loggedInUser', loggedInUser);
 
