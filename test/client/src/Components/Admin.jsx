@@ -145,7 +145,7 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       {allTracking && (
-    <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "15px", marginBottom: "10px" }}>
     {allTracking.slice(0, itemsToShow).map((tracking) => (
       <TrackingDetails key={tracking._id} tracking={tracking} />
     ))}
