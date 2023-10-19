@@ -103,7 +103,7 @@ const updateTracking = async (req, res) => {
   res.status(200).json(tracking);
 };
 
-const getUser async = (req, res) => {
+const getUser  = async (req, res) => {
   const { username, password } = req.body;
 
   if (username == process.env.USERNAME && password === process.env.PASSWORD) {
