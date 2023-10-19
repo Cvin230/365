@@ -5,6 +5,7 @@ import Tracking from "./models/trackingModel.js";
 // const dotenv = require("dotenv");
 import dotenv from "dotenv";
 import trackingRouter from "./routes/trackingInfo.js";
+import authenticationRouter from "./routes/authenticationRouter.js";
 // const cors = require("cors");
 import cors from "cors";
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/tracking", trackingRouter);
+app.use("/api/auth", authenticationRouter);
 
 //CONNECT TO DB
 mongoose
