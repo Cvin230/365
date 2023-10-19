@@ -74,11 +74,12 @@ const Admin = () => {
         }
       } catch (error) {
         console.error("Error:", error);
-      }
+      }finally {
+      setLoading(false); // Move it here, inside the try block
+    }
     };
 
     fetchTracking();
-    setLoading(false);
   }, [dispatch]);
 
 
