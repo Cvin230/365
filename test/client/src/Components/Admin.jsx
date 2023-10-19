@@ -18,7 +18,7 @@ const Admin = () => {
 
   const handleLogin = (username) => {
     setLoggedInUser(username);
-    localStorage.setItem('loggedInUser', username);
+    localStorage.setItem('loggedInUser', loggedInUser);
 
     // Set expiration time (30 days)
     const expirationTime = new Date().getTime() + 30 * 24 * 60 * 60 * 1000;
@@ -118,7 +118,7 @@ const Admin = () => {
     >
     {isLoggedIn !== undefined ? (
        <>
-      <p>Welcome, {loggedInUser}!</p>
+      <p>Welcome, {loggedInUser}! <button onClick={handleLogout}>Logout</button></p>
       <h1>Create Tracking Details</h1>
       <form
         onSubmit={handleSubmit}
