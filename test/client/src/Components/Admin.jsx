@@ -116,7 +116,7 @@ const Admin = () => {
         paddingTop: "20px",
       }}
     >
-    {isLoggedIn !== undefined ? (
+    {isLoggedIn ? (
        <>
       <p>Welcome, {loggedInUser}! <button onClick={handleLogout}>Logout</button></p>
       <h1>Create Tracking Details</h1>
