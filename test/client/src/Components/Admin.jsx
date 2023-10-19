@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TrackingDetails from "./TrackingDetails";
-import Pagination from "./Pagination";
+// import Pagination from "./Pagination";
 import { useTrackingContext } from "../hooks/useTrackingContext";
 // import { set } from "mongoose";
 
@@ -13,12 +13,11 @@ const Admin = () => {
   const [tn, setTn] = useState("");
   const [emptyFields, setEmptyFields] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = allTracking.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(allTracking.length / itemsPerPage);
+  const [itemsToShow, setItemsToShow] = useState(10);
+
+  const handleShowMore = () => {
+    setItemsToShow(prev => prev + 10); // Increase the number of items to show
+  };
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -87,10 +86,6 @@ const Admin = () => {
 
     fetchTracking();
   }, [dispatch]);
-
-  const handlePageChange = (pageNumber) => {
-  setCurrentPage(pageNumber);
-};
   
   return (
     <div
@@ -149,17 +144,16 @@ const Admin = () => {
       </form>
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
+      {allTracking &&(
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-  {currentItems ?
-    currentItems.map((tracking) => (
-      <TrackingDetails key={tracking._id} tracking={tracking} />
-    )) : null}
-      <Pagination
-    currentPage={currentPage}
-    totalPages={totalPages}
-    handlePageChange={handlePageChange}
-  />
-</div>
+  {allTracking.slice(0, itemsToShow).map((tracking) => (
+          <TrackingDetails key={tracking._id} tracking={tracking} />
+        ))}
+        {itemsToShow < allTracking.length && (
+        <button onClick={handleShowMore}>Show More</button>
+      )}
+      </div>)
+      
     </div>
   );
 };
