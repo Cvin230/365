@@ -144,16 +144,16 @@ const Admin = () => {
       </form>
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
-      {allTracking &&(
-      <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-  {allTracking.slice(0, itemsToShow).map((tracking) => (
-          <TrackingDetails key={tracking._id} tracking={tracking} />
-        ))}
-        {itemsToShow < allTracking.length && (
-        <button onClick={handleShowMore}>Show More</button>
-      )}
-      </div>)
-      
+      {allTracking && (
+    <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+    {allTracking.slice(0, itemsToShow).map((tracking) => (
+      <TrackingDetails key={tracking._id} tracking={tracking} />
+    ))}
+    {itemsToShow < allTracking.length && (
+      <button onClick={handleShowMore}>Show More</button>
+    )}
+  </div>
+  )}  
     </div>
   );
 };
