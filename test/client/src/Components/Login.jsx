@@ -8,7 +8,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://ship365-api.onrender.com/api/tracking/login', {
+      const response = await fetch('https://ship365-api.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
