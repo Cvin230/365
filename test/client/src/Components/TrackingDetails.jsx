@@ -91,7 +91,7 @@ function TrackingDetails({ tracking }) {
               cursor: "pointer",
             }}
           >
-            {loadingTransit ? Loading... : In Transit}
+            {loadingTransit ? "Loading..." : "In Transit"}
           </span>
         ) : null}
 
@@ -104,7 +104,7 @@ function TrackingDetails({ tracking }) {
             cursor: "pointer",
           }}
         >
-          {loadingDelete ? hourglass_top : delete}
+          {loadingDelete ? "hourglass_top" : "delete"}
         </span>
       </div>
     </div>
