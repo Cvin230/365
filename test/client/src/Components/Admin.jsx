@@ -18,6 +18,7 @@ const Admin = () => {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = allTracking.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(allTracking.length / itemsPerPage);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
