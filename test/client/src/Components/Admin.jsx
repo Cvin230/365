@@ -107,6 +107,7 @@ const Admin = () => {
   
   return (
      {isLoggedIn ? (
+       <>
         <div
       style={{
         display: "flex",
@@ -174,6 +175,7 @@ const Admin = () => {
   </div>
   )}  
     </div>
+    </>
       ) : (
         <Login onLogin={handleLogin} />
       )}
