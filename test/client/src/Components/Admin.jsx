@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TrackingDetails from "./TrackingDetails";
-// import Pagination from "./Pagination";
+import Login from "./Login";
 import { useTrackingContext } from "../hooks/useTrackingContext";
 // import { set } from "mongoose";
 
@@ -14,7 +14,25 @@ const Admin = () => {
   const [emptyFields, setEmptyFields] = useState([]);
   const [loading, setLoading] = useState(false);
   const [itemsToShow, setItemsToShow] = useState(10);
+  const [loggedInUser, setLoggedInUser] = useState(localStorage.getItem('loggedInUser'));
 
+  const handleLogin = (username) => {
+    setLoggedInUser(username);
+    localStorage.setItem('loggedInUser', username);
+
+    // Set expiration time (30 days)
+    const expirationTime = new Date().getTime() + 30 * 24 * 60 * 60 * 1000;
+    localStorage.setItem('expirationTime', expirationTime);
+  };
+
+  const handleLogout = () => {
+    setLoggedInUser(null);
+    localStorage.removeItem('loggedInUser');
+    localStorage.removeItem('expirationTime');
+  };
+
+  const isLoggedIn = loggedInUser && new Date().getTime() < Number(localStorage.getItem('expirationTime'));
+  
   const handleShowMore = () => {
     setItemsToShow(prev => prev + 10); // Increase the number of items to show
   };
@@ -88,7 +106,8 @@ const Admin = () => {
   }, [dispatch]);
   
   return (
-    <div
+     {isLoggedIn ? (
+        <div
       style={{
         display: "flex",
         flexDirection: "column",
@@ -155,6 +174,9 @@ const Admin = () => {
   </div>
   )}  
     </div>
+      ) : (
+        <Login onLogin={handleLogin} />
+      )}
   );
 };
 
