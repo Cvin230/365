@@ -106,8 +106,6 @@ const Admin = () => {
   }, [dispatch]);
   
   return (
-     {isLoggedIn ? (
-       <>
         <div
       style={{
         display: "flex",
@@ -118,6 +116,8 @@ const Admin = () => {
         paddingTop: "20px",
       }}
     >
+    {isLoggedIn ? (
+       <>
       <h1>Create Tracking Details</h1>
       <form
         onSubmit={handleSubmit}
@@ -174,11 +174,11 @@ const Admin = () => {
     )}
   </div>
   )}  
-    </div>
     </>
       ) : (
         <Login onLogin={handleLogin} />
       )}
+     </div>
   );
 };
 
