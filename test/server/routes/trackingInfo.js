@@ -5,7 +5,6 @@ import {
   getSingleTracking,
   deleteTracking,
   updateTracking,
-  getUser
 } from "../controllers/trackingController.js";
 
 const router = express.Router();
@@ -24,7 +23,4 @@ router.delete("/:id", deleteTracking);
 
 //UPDATE a tracking info
 router.patch("/:id", updateTracking);
-
-// Add the authentication route
-router.post('/login', getUser);
 export default router;
