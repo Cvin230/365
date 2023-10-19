@@ -14,7 +14,7 @@ const Admin = () => {
   const [emptyFields, setEmptyFields] = useState([]);
   const [loading, setLoading] = useState(false);
   const [itemsToShow, setItemsToShow] = useState(10);
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(localStorage.getItem('loggedInUser'));
 
   const handleLogin = (username) => {
     console.log("Logging in with username:", username);
