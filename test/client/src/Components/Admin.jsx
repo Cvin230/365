@@ -116,7 +116,7 @@ const Admin = () => {
         paddingTop: "20px",
       }}
     >
-    {isLoggedIn ? (
+    {isLoggedIn !== undefined ? (
        <>
       <h1>Create Tracking Details</h1>
       <form
