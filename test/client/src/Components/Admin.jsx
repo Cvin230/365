@@ -150,10 +150,10 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-  {currentItems &&
+  {currentItems ?
     currentItems.map((tracking) => (
       <TrackingDetails key={tracking._id} tracking={tracking} />
-    ))}
+    )) : null}
       <Pagination
     currentPage={currentPage}
     totalPages={totalPages}
