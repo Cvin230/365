@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TrackingDetails from "./TrackingDetails";
+import Pagination from "./Pagination";
 import { useTrackingContext } from "../hooks/useTrackingContext";
 // import { set } from "mongoose";
 
@@ -12,8 +13,12 @@ const Admin = () => {
   const [tn, setTn] = useState("");
   const [emptyFields, setEmptyFields] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log(tn, "tn");
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = allTracking.slice(indexOfFirstItem, indexOfLastItem);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -82,7 +87,10 @@ const Admin = () => {
     fetchTracking();
   }, [dispatch]);
 
-
+  const handlePageChange = (pageNumber) => {
+  setCurrentPage(pageNumber);
+};
+  
   return (
     <div
       style={{
@@ -141,10 +149,15 @@ const Admin = () => {
       {error ? <p className="error">{error}</p> : null}
       {loading && <div>Loading...</div>}
       <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-  {allTracking &&
-    allTracking.map((tracking) => (
+  {currentItems &&
+    currentItems.map((tracking) => (
       <TrackingDetails key={tracking._id} tracking={tracking} />
     ))}
+      <Pagination
+    currentPage={currentPage}
+    totalPages={totalPages}
+    handlePageChange={handlePageChange}
+  />
 </div>
     </div>
   );
