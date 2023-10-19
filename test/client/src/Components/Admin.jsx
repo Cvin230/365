@@ -19,7 +19,7 @@ const Admin = () => {
   const handleLogin = (username) => {
     console.log("Logging in with username:", username);
     setLoggedInUser(username);
-    localStorage.setItem('loggedInUser', loggedInUser);
+    localStorage.setItem('loggedInUser', username);
 
     // Set expiration time (30 days)
     const expirationTime = new Date().getTime() + 30 * 24 * 60 * 60 * 1000;
