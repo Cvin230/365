@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "../styles/TrackingDetails.module.css";
 import { useTrackingContext } from "../hooks/useTrackingContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function TrackingDetails({ tracking }) {
   const { dispatch } = useTrackingContext();
+  const [loadingTransit, setLoadingTransit] = useState(false);
+  const [loadingDelete, setLoadingDelete] = useState(false);
 
   const handleDelete = async () => {
+    setLoadingDelete(true);
   try {
     const response = await fetch("https://ship365-api.onrender.com/api/tracking/" + tracking._id, {
       method: "DELETE",
@@ -25,22 +28,35 @@ function TrackingDetails({ tracking }) {
     dispatch({ type: "DELETE_TRACKING", payload: json });
   } catch (error) {
     console.error('Error:', error);
+  } finally {
+    setLoadingDelete(false);
   }
 };
 
 
   const handleIntransit = async () => {
-    const response = await fetch("https://ship365-api.onrender.com/api/tracking/" + tracking._id, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ status: "intransit" }),
-    });
-    const json = await response.json();
+    setLoadingTransit(true); // Set loading state to true
 
-    if (response.ok) {
-      dispatch({ type: "UPDATE_TRACKING", payload: json });
+    try {
+      const response = await fetch(
+        "https://ship365-api.onrender.com/api/tracking/" + tracking._id,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ status: "intransit" }),
+        }
+      );
+      const json = await response.json();
+
+      if (response.ok) {
+        dispatch({ type: "UPDATE_TRACKING", payload: json });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoadingTransit(false); // Set loading state back to false
     }
   };
 
@@ -75,7 +91,7 @@ function TrackingDetails({ tracking }) {
               cursor: "pointer",
             }}
           >
-            In Transit
+            {loadingTransit ? Loading... : In Transit}
           </span>
         ) : null}
 
@@ -88,7 +104,7 @@ function TrackingDetails({ tracking }) {
             cursor: "pointer",
           }}
         >
-          delete
+          {loadingDelete ? hourglass_top : delete}
         </span>
       </div>
     </div>
