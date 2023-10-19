@@ -118,6 +118,7 @@ const Admin = () => {
     >
     {isLoggedIn !== undefined ? (
        <>
+      <p>Welcome, {loggedInUser}!</p>
       <h1>Create Tracking Details</h1>
       <form
         onSubmit={handleSubmit}
