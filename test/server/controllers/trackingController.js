@@ -106,7 +106,7 @@ const updateTracking = async (req, res) => {
 const getUser  = async (req, res) => {
   const { username, password } = req.body;
 
-  if (username == process.env.USERNAME && password === process.env.PASSWORD) {
+  if (username === process.env.USERNAME && password === process.env.PASSWORD) {
     res.json({ message: 'Login successful' });
   } else {
     res.status(401).json({ message: 'Invalid credentials' });
