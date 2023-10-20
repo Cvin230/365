@@ -51,7 +51,11 @@ function TrackingDetails({ tracking }) {
       const json = await response.json();
 
       if (response.ok) {
+        if (json.status === "intransit") {
         dispatch({ type: "UPDATE_TRACKING", payload: json });
+      } else {
+        throw new Error(`Invalid status in server response: ${json.status}`);
+      }
       }
     } catch (error) {
       console.error("Error:", error);
