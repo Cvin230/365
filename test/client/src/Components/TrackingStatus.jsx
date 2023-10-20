@@ -11,8 +11,8 @@ function TrackingStatus({ status, address, updateTime, name }) {
         <div className={styles.circle2}></div>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
         <p style={{ color: "#e7195a" }}>Label created, waiting for pickup</p>
-        <p style={{ color: "#e7195a" }}>{address}</p>
-        <p style={{ color: "#e7195a" }}>{name}</p>
+        <p style={{ color: "#e7195a" }}>- {""}{address}</p>
+        <p style={{ color: "#e7195a" }}>- {""}{name}</p>
         </div>
         
       </div>
@@ -43,8 +43,8 @@ function TrackingStatus({ status, address, updateTime, name }) {
         <div className={styles.circle}></div>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
         <p style={{ color: "#1aac83" }}>Label created, waiting for pickup</p>
-        <p style={{ color: "#1aac83" }}>{address}</p>
-        <p style={{ color: "#1aac83" }}>{name}</p>
+        <p style={{ color: "#1aac83" }}>- {""}{address}</p>
+        <p style={{ color: "#1aac83" }}>- {""}{name}</p>
         </div>
       </div>
     );
