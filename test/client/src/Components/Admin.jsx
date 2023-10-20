@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TrackingDetails from "./TrackingDetails";
 import Login from "./Login";
 import { useTrackingContext } from "../hooks/useTrackingContext";
+import { Link } from 'react-router-dom';
 // import { set } from "mongoose";
 
 const Admin = () => {
@@ -107,6 +108,8 @@ const Admin = () => {
   }, [dispatch]);
   
   return (
+    <div>
+      <Link to="/"><button>Home</button></Link>
         <div
       style={{
         display: "flex",
@@ -181,6 +184,7 @@ const Admin = () => {
         <Login onLogin={handleLogin} />
       )}
      </div>
+    </div>
   );
 };
 
