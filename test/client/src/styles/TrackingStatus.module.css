@@ -12,7 +12,7 @@
   width: 1px;
   position: absolute;
   left: 50%;
-  top: 53%;
+  top: 51%;
 }
 
 .circle {
@@ -22,7 +22,7 @@
   border-radius: 50%;
   position: absolute;
   left: 50.5%;
-  top: 53%;
+  top: 51%;
   transform: translate(-50%, -50%);
 }
 
@@ -52,7 +52,7 @@
   width: 1px;
   position: absolute;
   left: 50%;
-  top: 9%;
+  top: 8%;
 }
 
 .circle3 {
@@ -62,6 +62,6 @@
   border-radius: 50%;
   position: absolute;
   left: 50.5%;
-  top: 9%;
+  top: 8%;
   transform: translate(-50%, -50%);
 }
