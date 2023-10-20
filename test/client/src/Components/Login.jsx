@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const response = await fetch('https://ship365-api.onrender.com/api/auth/login', {
         method: 'POST',
@@ -25,6 +26,8 @@ const Login = ({ onLogin }) => {
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -47,7 +50,9 @@ const Login = ({ onLogin }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" disabled={loading}>
+        {loading ? 'Logging in...' : 'Login'}
+      </button>
     </form>
   );
 };
