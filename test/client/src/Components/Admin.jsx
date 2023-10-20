@@ -109,7 +109,7 @@ const Admin = () => {
   
   return (
     <div style={{marginTop: "20px"}}>
-      <Link to="/" style={{ color: 'white', backgroundColor: "#1aac83" textDecoration: 'underline', fontSize: '1.2rem', marginLeft: "15px" }}>Go Home</Link>
+      <Link to="/" style={{ color: 'white', backgroundColor: "#1aac83", textDecoration: 'underline', fontSize: '1.2rem', marginLeft: "15px" }}>Go Home</Link>
         <div
       style={{
         display: "flex",
