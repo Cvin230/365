@@ -30,7 +30,7 @@ function TrackingStatus({ status, address, updateTime, name }) {
 
         <div className={styles.line}></div>
         <div className={styles.circle}></div>
-        <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "10px"}}>
         <p style={{ color: "#1aac83" }}>Label created, Your package has been shipped</p>
         <p style={{ color: "#1aac83" }}>- {""}{address}</p>
         <p style={{ color: "#1aac83" }}>- {""}{name}</p>
